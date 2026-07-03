@@ -176,7 +176,7 @@ function vitePluginServiceWorkerVersioning(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginServiceWorkerVersioning()];
 
 export default defineConfig({
-  base: "/OsBrothersAPP-Teste/",
+  base: "/osbrothersapp/",
   plugins,
   resolve: {
     alias: {
