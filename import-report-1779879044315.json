@@ -1,0 +1,274 @@
+{
+  "timestamp": "2026-05-27T10:50:44.315Z",
+  "file": "/home/ubuntu/upload/users.xlsx",
+  "summary": {
+    "total": 65,
+    "imported": 0,
+    "skipped": 65,
+    "errors": 0
+  },
+  "imported": [],
+  "skipped": [
+    {
+      "email": "victorhgs26@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "lukuinhas1234@outlook.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "Priscilabmathias@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "orlando_badboy@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "alinevenanciom97@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "lucas_peres.a@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "trc290382@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "josevictorm13@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "interiores@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "juridicocaio@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "thaisaamqueiroz@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "glenda_s2@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "dmtzera666@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "vitin_x@outlook.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "djbetto1@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "sthephany.rcunha@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "vitor.toledo.ti@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "mjefersom@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "aninhasalmeron@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "talitavianna@outlook.com.br",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "danialbarracim@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "thalesnagy@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "gustavo.thobias@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "joyce_queiroz@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "rodcabez@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "lufe068@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "raphagomes.souza@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "vieira.laurack@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "libarino180@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "ju_bitencourt@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "cachorreira233@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "raphael.bueno.rb@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "hecthormorais@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "robertolecher400@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "ke.santos20.kf@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "rafaelcrisostomo25@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "patriciadoretti@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "teago767@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "larissafcamposs@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "matheustorrezan20@icloud.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "victorsantosalves@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "helenammourad@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "sorayasalles1988@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "fermessias@icloud.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "zamaio.giovanna@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "titi_baptista@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "kakalino44@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "roberta_michelin@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "anderson.rojr@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "diegobellucci@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "b.caiolima@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "eduardojynx@gmaill.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "amanda_vinunes@outlook.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "soycarolmarques@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "lucas.copque@icloud.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "delatorrejessica261@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "aroucasaude2@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "avulso@caderninho.local",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "Fernanda.carvalhoog@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "dfernandes790@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "bruno_thomee@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "thaisadtr28@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "flaviodeluca@hotmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "ronaldo.cavalcante94@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    },
+    {
+      "email": "luis.hm.rodrigues@gmail.com",
+      "reason": "Email já existe no banco de dados"
+    }
+  ],
+  "errors": []
+}
