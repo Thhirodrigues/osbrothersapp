@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1774042249232,
+      "tag": "0000_cloudy_doorman",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1774059251430,
+      "tag": "0001_safe_vin_gonzales",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1774154310517,
+      "tag": "0002_yummy_shen",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1774395221280,
+      "tag": "0003_narrow_carmella_unuscione",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1778308602450,
+      "tag": "0004_daffy_wendell_rand",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1778309310713,
+      "tag": "0005_right_saracen",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1778309360225,
+      "tag": "0006_sleepy_natasha_romanoff",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1781698526697,
+      "tag": "0007_mighty_mindworm",
+      "breakpoints": true
+    }
+  ]
+}

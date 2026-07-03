@@ -1,0 +1,1 @@
+ALTER TABLE `menu_items` ADD `order` int DEFAULT 0 NOT NULL;
