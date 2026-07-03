@@ -1,0 +1,290 @@
+/**
+ * CentralizedStoreContext.tsx - Contexto centralizado de estado global
+ * 
+ * Características:
+ * - Estado global sincronizado via SSE + Polling
+ * - Cache em memória apenas (sem localStorage/IndexedDB)
+ * - Compartilhado entre todas as páginas
+ * - Atualização automática quando dados mudam
+ * - Mesma visualização para todos os dispositivos
+ */
+
+import React, { createContext, useContext, useCallback } from 'react';
+import { useRealtimeSSE } from '@/hooks/useRealtimeSSE';
+
+interface CentralizedStoreContextType {
+  // Estado
+  usuarios: any[];
+  clientes: any[];
+  lancamentos: any[];
+  configuracoes: any;
+  ultimaSincronizacao: number;
+  statusConexao: 'conectado' | 'desconectado' | 'sincronizando';
+  isConnected: boolean;
+
+  // Operações de clientes
+  adicionarCliente: (nome: string, telefone?: string, email?: string) => Promise<void>;
+  atualizarCliente: (id: string, dados: any) => Promise<void>;
+  deletarCliente: (id: string) => Promise<void>;
+
+  // Operações de transações
+  adicionarLancamento: (
+    clienteId: string,
+    tipo: 'debito' | 'pagamento',
+    valor: number,
+    descricao: string
+  ) => Promise<void>;
+  deletarLancamento: (id: string) => Promise<void>;
+
+  // Utilitários
+  obterClientePorId: (id: string) => any;
+  obterLancamentosDoCliente: (clienteId: string) => any[];
+  calcularSaldoCliente: (clienteId: string) => number;
+  calcularSaldoTotal: () => number;
+}
+
+const CentralizedStoreContext = createContext<CentralizedStoreContextType | undefined>(undefined);
+
+export function CentralizedStoreProvider({ children }: { children: React.ReactNode }) {
+  const {
+    usuarios,
+    clientes,
+    lancamentos,
+    configuracoes,
+    ultimaSincronizacao,
+    statusConexao,
+    isConnected,
+  } = useRealtimeSSE();
+
+  // Usar URL absoluta em produção, relativa em dev
+  const getApiUrl = (path: string) => {
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
+    return `${baseUrl}${path}`;
+  };
+
+  // Operações de clientes — usa tabela users (role='user')
+  const adicionarCliente = useCallback(
+    async (nome: string, telefone?: string, email?: string) => {
+      try {
+        const emailFinal = email || `${nome.trim().toLowerCase().replace(/\s+/g, '.')}.${Date.now()}@caderninho.local`;
+        const response = await fetch(getApiUrl('/api/users'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, name: nome, email: emailFinal, telefone, tipo: 'user' }),
+        });
+        if (!response.ok) throw new Error('Erro ao adicionar cliente');
+        console.log('✅ Cliente adicionado com sucesso');
+      } catch (error) {
+        console.error('Erro ao adicionar cliente:', error);
+        throw error;
+      }
+    },
+    []
+  );
+
+  const atualizarCliente = useCallback(
+    async (id: string, dados: any) => {
+      try {
+        const response = await fetch(getApiUrl(`/api/users/${id}`), {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dados),
+        });
+        if (!response.ok) throw new Error('Erro ao atualizar cliente');
+        console.log('✅ Cliente atualizado com sucesso');
+      } catch (error) {
+        console.error('Erro ao atualizar cliente:', error);
+        throw error;
+      }
+    },
+    []
+  );
+
+  const deletarCliente = useCallback(
+    async (id: string) => {
+      try {
+        const response = await fetch(getApiUrl(`/api/users/${id}`), {
+          method: 'DELETE',
+        });
+        if (!response.ok) throw new Error('Erro ao deletar cliente');
+        console.log('✅ Cliente deletado com sucesso');
+      } catch (error) {
+        console.error('Erro ao deletar cliente:', error);
+        throw error;
+      }
+    },
+    []
+  );
+
+  // Operações de transações
+  const adicionarLancamento = useCallback(
+    async (clienteId: string, tipo: 'debito' | 'pagamento', valor: number, descricao: string) => {
+      try {
+        const response = await fetch(getApiUrl('/api/lancamentos'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ clienteId, tipo, valor, descricao }),
+        });
+        if (!response.ok) throw new Error('Erro ao adicionar lançamento');
+        console.log('✅ Lançamento adicionado com sucesso');
+      } catch (error) {
+        console.error('Erro ao adicionar lançamento:', error);
+        throw error;
+      }
+    },
+    []
+  );
+
+  const deletarLancamento = useCallback(
+    async (id: string) => {
+      try {
+        const response = await fetch(`/api/lancamentos/${id}`, {
+          method: 'DELETE',
+        });
+        if (!response.ok) throw new Error('Erro ao deletar lançamento');
+        console.log('✅ Lançamento deletado com sucesso');
+      } catch (error) {
+        console.error('Erro ao deletar lançamento:', error);
+        throw error;
+      }
+    },
+    []
+  );
+
+  // Utilitários
+  const obterClientePorId = useCallback(
+    (id: string) => {
+      return clientes.find((c) => c.id === id);
+    },
+    [clientes]
+  );
+
+  const obterLancamentosDoCliente = useCallback(
+    (clienteId: string) => {
+      return lancamentos.filter((l) => l.clienteId === clienteId);
+    },
+    [lancamentos]
+  );
+
+  const calcularSaldoCliente = useCallback(
+    (clienteId: string) => {
+      const lancamentosCliente = obterLancamentosDoCliente(clienteId);
+      return lancamentosCliente.reduce((total, lancamento) => {
+        if (lancamento.tipo === 'debito') {
+          return total + lancamento.valor;
+        } else if (lancamento.tipo === 'pagamento') {
+          return total - lancamento.valor;
+        }
+        return total;
+      }, 0);
+    },
+    [obterLancamentosDoCliente]
+  );
+
+  const calcularSaldoTotal = useCallback(() => {
+    return clientes.reduce((total, cliente) => {
+      return total + calcularSaldoCliente(cliente.id);
+    }, 0);
+  }, [clientes, calcularSaldoCliente]);
+
+  const value: CentralizedStoreContextType = {
+    // Estado
+    usuarios,
+    clientes,
+    lancamentos,
+    configuracoes,
+    ultimaSincronizacao,
+    statusConexao,
+    isConnected,
+
+    // Operações de clientes
+    adicionarCliente,
+    atualizarCliente,
+    deletarCliente,
+
+    // Operações de transações
+    adicionarLancamento,
+    deletarLancamento,
+
+    // Utilitários
+    obterClientePorId,
+    obterLancamentosDoCliente,
+    calcularSaldoCliente,
+    calcularSaldoTotal,
+  };
+
+  return (
+    <CentralizedStoreContext.Provider value={value}>
+      {children}
+    </CentralizedStoreContext.Provider>
+  );
+}
+
+export function useCentralizedStore(): CentralizedStoreContextType {
+  const context = useContext(CentralizedStoreContext);
+  if (!context) {
+    throw new Error('useCentralizedStore deve ser usado dentro de CentralizedStoreProvider');
+  }
+  return context;
+}
+
+/**
+ * Hook para dados de clientes
+ */
+export function useClientes() {
+  const { clientes, adicionarCliente, atualizarCliente, deletarCliente, isConnected } =
+    useCentralizedStore();
+
+  return {
+    clientes,
+    adicionarCliente,
+    atualizarCliente,
+    deletarCliente,
+    isConnected,
+  };
+}
+
+/**
+ * Hook para dados de transações
+ */
+export function useLancamentos(clienteId?: string) {
+  const { lancamentos, adicionarLancamento, deletarLancamento, isConnected } =
+    useCentralizedStore();
+
+  const lancamentosDoCliente = clienteId
+    ? lancamentos.filter((l) => l.clienteId === clienteId)
+    : lancamentos;
+
+  return {
+    lancamentos: lancamentosDoCliente,
+    adicionarLancamento,
+    deletarLancamento,
+    isConnected,
+  };
+}
+
+/**
+ * Hook para status de conexão
+ */
+export function useConnectionStatus() {
+  const { statusConexao, isConnected, ultimaSincronizacao } = useCentralizedStore();
+
+  return {
+    statusConexao,
+    isConnected,
+    ultimaSincronizacao,
+  };
+}
+
+/**
+ * Hook para saldos
+ */
+export function useSaldos() {
+  const { clientes, calcularSaldoCliente, calcularSaldoTotal } = useCentralizedStore();
+
+  return {
+    clientes,
+    calcularSaldoCliente,
+    calcularSaldoTotal,
+  };
+}
