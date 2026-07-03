@@ -1,0 +1,47 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://6G4J6icMmx5rEXy.0667aace6315:9aO0mRP2dNUT0b15PdcK@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/dyVJYfPkMaKo6dqqnRNgqj?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663097499900/dyVJYfPkMaKo6dqqnRNgqj",
+    "access_key_id": "ASIAZV3A2ECZFFIKCJX7",
+    "secret_access_key": "6tSMhVxGf5u0n6b6E8RhveA/8xfETvvKxQrWckea",
+    "session_token": "IQoJb3JpZ2luX2VjEAwaCXVzLWVhc3QtMSJHMEUCICzcE4jhbbgDBu93ippc5AGqEMQaz29BCeAG9eQ/kJtrAiEAsP5qjOiLsUySRfheWeLxRGcgcf+6wjjOganIltkx3NYq/wMI1P//////////ARAEGgw2NjUzODYwOTg4NjYiDFQZFQ7qmaLZMc0rlCrTA6p2f4Bmf43iJBXBrjyzEkCNkwnloJ7YQ+tw29X41M2lRmFZEp3enkWyilDRuwuRcWVs6oBZZlSHuUS753F48ZaAjKZ+fj7KbcixYqAZ14VrTxgcRwpp11NgTTR/TPTC9Y0muMCW7dGxhXHoNsqk78RefPOuzIuHM32Yd5u/l/IIixVz//ljehv0vQt9+KjRg59aZvSLH96wBOmLiQJl0YKL8ziPkJ3QYG8UUy5k7+5kS0pXmiHEgNpoOQcGThKi/bRvcodXR8s52E7g9GthHK97ex10NAhdiAmn4KrbIhn+nh4pvWZ4FnbRAf6ZU4oaYh8CuOEGBxtxeoW/rai9DVEmYzSuWajygqaVGPT0OnNnYZaOhlSWTJIm2DQraHKOciL3UcVad1m6juYrz9JEIduvg1Ie1XHH68ts52rEQ0r05h60DRDmjdlNgL6WG6XGzqUMX+c5tpx+Y+tHLV5Tn6sHoITioX6GBv4cT+Zmx/v3QMbfJP1S8Lv7CbnoMf4e+ZbS71QDUlOiD8vv4wOE5YFqTPuYnGAUiJLOdijhfCZMQYnSCYVpFlBOv9jP/pk5NLPCCxic3O4e1maz8GqTdpf/e3AoN2z1xltP+DYsuDxBDXePMIWOktIGOp0BxOUSbflCAjiSOV+kjzUQ96sH4LA8nuxt0JS9aJf3ZKB2A4O+N1qxKsUYtyzRlqWK2Nm/az8gWG0bm43OvYX80T7MdpWjds0X/F38B/qCR/rpssONy1plYeUHv3D5xQ9pu6dac+syIOP57l1+HsiDUO3mHBEH85x4wEOCmlAnLb7y1KsWhNp9Ks/A6NBe/5Mu09bNWy+KmGQqb6Iykw==",
+    "expiration": "2026-07-01T15:18:29.000Z",
+    "backend": "GIT_BACKEND_S3"
+  },
+  "name": "caderninho-digital",
+  "path": "/home/ubuntu/caderninho-digital",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "V4LHk3cbr4a64Y5aNS59iP",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "EMAIL_PASSWORD": "cwqvguehplgofres",
+    "EMAIL_SERVICE": "gmail",
+    "EMAIL_USER": "osbrothersadega@gmail.com",
+    "JWT_SECRET": "o4ChRFypsAAxgFusVWR4mZ",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Victor Hugo Gonçalves",
+    "OWNER_OPEN_ID": "2SKhtJHLiAG3WucXgpmHdP",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "56110e39-cbfd-4688-8de7-c901ac00cf38",
+    "VITE_APP_ID": "dyVJYfPkMaKo6dqqnRNgqj",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663097499900/DEknopXiOqTZgWqG.png",
+    "VITE_APP_TITLE": "Os Brothers Adega App",
+    "VITE_FRONTEND_FORGE_API_KEY": "kPcX459DdSN44y6Zd99PBL",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
