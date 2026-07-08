@@ -124,3 +124,50 @@ Existência da pasta `client/public/__manus__/`, cuja finalidade e impacto serã
 ## Próxima Etapa
 
 Iniciar auditoria completa da camada `server/`, incluindo APIs, autenticação, sincronização, banco de dados e responsabilidades de negócio.
+
+---------------
+
+# 2026-07-08 — AUDITORIA FASE 03 — BACKEND (SERVER)
+
+## Escopo
+
+Auditoria estrutural da camada `server`.
+
+## Conclusões
+
+A arquitetura do backend apresenta boa separação entre rotas, serviços e infraestrutura, indicando um projeto preparado para evolução.
+
+### Avaliação
+
+- Organização: 9,2/10
+- Modularização: Boa
+- Separação de responsabilidades: Boa
+
+## Banco
+
+Confirmada integração com Drizzle ORM. A auditoria detalhada de schemas, índices, consultas e migrations será realizada em fase específica.
+
+## Sincronização
+
+Identificada infraestrutura dedicada para sincronização em tempo real e WebSocket, considerada um ponto forte da arquitetura.
+
+## Riscos Identificados
+
+### R004
+
+Validar se existe acoplamento direto entre frontend e backend que dificulte manutenção ou reutilização.
+
+### R005
+
+Definir arquitetura oficial de dois modos de execução:
+
+- Modo Demonstração (compatível com GitHub Pages)
+- Modo Produção (Node, banco de dados e sincronização completa)
+
+Essa separação será utilizada como base para eliminar restrições de hospedagem sem duplicar o código da aplicação.
+
+## Próxima Etapa
+
+Auditoria completa do banco de dados, camada compartilhada (`shared`) e infraestrutura de sincronização, seguida do inventário das dependências remanescentes da plataforma Manus.
+
+--------------------
