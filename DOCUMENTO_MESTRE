@@ -223,3 +223,41 @@ Antes de qualquer limpeza, será produzido um Inventário de Arquivos com classi
 
 Nenhum arquivo será removido sem auditoria e registro no Documento Mestre.
 ------------------------
+---
+
+# 2026-07-08 — AUDITORIA FASE 05 — INVENTÁRIO DE DEPENDÊNCIAS MANUS
+
+## Objetivo
+
+Identificar todas as dependências remanescentes da plataforma Manus.
+
+## Resultado
+
+Foram identificados nove arquivos com referências à Manus.
+
+### Dependências críticas
+
+- client/public/__manus__/
+- vite.config.ts
+- package.json
+- server/index.ts
+
+### Dependências médias
+
+- client/src/components/ManusDialog.tsx
+- scripts/import-users.mjs
+
+### Referências documentais
+
+- RELATORIO_AUDITORIA_FINAL.md
+- todo.md
+- pnpm-lock.yaml (registro da dependência)
+
+## Conclusão
+
+O acoplamento encontra-se concentrado em poucos pontos estruturais, indicando que o desacoplamento poderá ser realizado de forma planejada, sem necessidade de reescrever toda a aplicação.
+
+## Próxima etapa
+
+Produzir o Mapa de Dependências da Aplicação, identificando fluxos de inicialização, providers, contexts, serviços, hooks, rotas e componentes efetivamente utilizados.
+-----------------------
