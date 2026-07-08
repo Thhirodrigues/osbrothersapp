@@ -67,3 +67,60 @@ R001 — Forte acoplamento ao ecossistema Manus:
 2. Auditar backend.
 3. Mapear dependências Manus.
 4. Planejar desacoplamento completo.
+---
+
+# 2026-07-08 — AUDITORIA FASE 02 — FRONTEND (CLIENT)
+
+## Escopo
+
+Auditoria estrutural da pasta `client/`.
+
+## Estrutura
+
+A arquitetura do frontend está organizada em módulos claros:
+
+- public/
+- src/components/
+- src/contexts/
+- src/hooks/
+- src/lib/
+- src/pages/
+- src/types/
+
+### Avaliação
+
+- Organização: 9,5/10
+- Modularização: 9,5/10
+- Separação de responsabilidades: Boa
+
+## Context API
+
+Contextos identificados:
+
+- AuthContext
+- BannerContext
+- CentralizedStoreContext
+- FiltroContext
+- HideValuesContext
+- NavigationContext
+- ThemeContext
+
+Neste estágio, a utilização de Context API é considerada adequada. Não há recomendação de migração para outro gerenciador de estado antes da conclusão da auditoria completa.
+
+## Componentes
+
+Foi identificada uma biblioteca extensa de componentes de interface, indicando uma base sólida para reutilização. Futuramente será realizada uma auditoria para identificar componentes não utilizados e reduzir código morto.
+
+## Riscos Identificados
+
+### R002
+
+Existência do componente `ManusDialog.tsx`, que poderá representar dependência residual da plataforma Manus.
+
+### R003
+
+Existência da pasta `client/public/__manus__/`, cuja finalidade e impacto serão analisados em auditoria específica de desacoplamento.
+
+## Próxima Etapa
+
+Iniciar auditoria completa da camada `server/`, incluindo APIs, autenticação, sincronização, banco de dados e responsabilidades de negócio.
