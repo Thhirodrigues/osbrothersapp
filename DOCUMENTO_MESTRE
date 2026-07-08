@@ -261,3 +261,210 @@ O acoplamento encontra-se concentrado em poucos pontos estruturais, indicando qu
 
 Produzir o Mapa de Dependências da Aplicação, identificando fluxos de inicialização, providers, contexts, serviços, hooks, rotas e componentes efetivamente utilizados.
 -----------------------
+ETAPA 01 — MATRIZ DE MÓDULOS
+# BASE DE CONHECIMENTO DO PROJETO
+
+---
+
+# MATRIZ DE MÓDULOS
+
+## CORE
+
+Responsável pelo funcionamento básico da aplicação.
+
+Componentes esperados:
+
+- Inicialização
+- App
+- Providers
+- Navegação
+- Configurações
+- Autenticação
+- Permissões
+
+Criticidade:
+🔴 Muito Alta
+
+---
+
+## UI
+
+Responsável pela interface.
+
+Componentes esperados:
+
+- Layout
+- Componentes
+- Páginas
+- Temas
+- Modais
+- Tabelas
+- Formulários
+
+Criticidade:
+🟠 Alta
+
+---
+
+## BUSINESS
+
+Responsável pelas regras de negócio.
+
+Módulos identificados:
+
+- Clientes
+- Produtos
+- Cardápio
+- Pedidos
+- Financeiro
+- Relatórios
+- Auditoria
+
+Criticidade:
+🔴 Muito Alta
+
+---
+
+## DATA
+
+Responsável pelo fluxo de dados.
+
+Inclui:
+
+- API
+- Database
+- Cache
+- Sincronização
+- WebSocket
+- SSE
+- Polling
+
+Criticidade:
+🔴 Muito Alta
+
+---
+
+## INFRA
+
+Infraestrutura do projeto.
+
+Inclui:
+
+- Railway
+- Build
+- Scripts
+- Drizzle
+- PWA
+- Deploy
+
+Criticidade:
+🟠 Alta
+--------------------
+ETAPA 02 — DÍVIDA TÉCNICA
+# DÍVIDA TÉCNICA
+
+| ID | Descrição | Prioridade | Situação |
+|----|-----------|------------|----------|
+| DT-001 | Dependências Manus | Alta | Aberta |
+| DT-002 | Arquivos index de backup | Média | Aberta |
+| DT-003 | Scripts sem classificação | Média | Aberta |
+| DT-004 | Inventário de componentes inexistente | Média | Aberta |
+| DT-005 | Inventário de APIs inexistente | Média | Aberta |
+| DT-006 | Inventário de banco inexistente | Média | Aberta |
+-----------------------
+ETAPA 03 — ADR
+# REGISTRO DE DECISÕES ARQUITETURAIS (ADR)
+
+## ADR-001
+
+Data:
+08/07/2026
+
+Título:
+Criação do DOCUMENTO_MESTRE
+
+Status:
+Aprovado
+
+Objetivo:
+
+Centralizar toda documentação técnica, auditorias, decisões e histórico do projeto em um único documento cronológico.
+
+Impacto:
+
+Toda alteração relevante deverá ser registrada antes do encerramento de cada Sprint ou fase.
+
+---
+
+## ADR-002
+
+Data:
+08/07/2026
+
+Título:
+Projeto independente da plataforma Manus
+
+Status:
+Em andamento
+
+Objetivo:
+
+Eliminar dependências estruturais da plataforma Manus mantendo compatibilidade com:
+
+- PWA
+- Navegadores
+- Android
+- iOS
+- Execução local
+- GitHub Pages (modo compatível)
+----------------------------------
+ETAPA 04 — ÍNDICE DE SAÚDE DO PROJETO
+# ÍNDICE DE SAÚDE
+
+| Área | Nota |
+|------|------:|
+| Arquitetura | 9,4 |
+| Organização | 9,5 |
+| Modularização | 9,3 |
+| Banco | 9,2 |
+| Backend | 9,2 |
+| Frontend | 9,4 |
+| Testabilidade | 9,1 |
+| Segurança | Em auditoria |
+| Performance | Em auditoria |
+| Documentação | 7,5 |
+| Independência Manus | 4,0 |
+--------------------------
+ETAPA 05 — ROADMAP MACRO
+# ROADMAP DE ENGENHARIA
+
+FASE A
+✔ Auditoria Geral
+
+FASE B
+✔ Documento Mestre
+
+FASE C
+🔄 Inventário Arquitetural
+
+FASE D
+⬜ Mapeamento de Dependências
+
+FASE E
+⬜ Desacoplamento Manus
+
+FASE F
+⬜ Padronização Arquitetural
+
+FASE G
+⬜ Otimização de Performance
+
+FASE H
+⬜ PWA Offline Completo
+
+FASE I
+⬜ Compatibilidade GitHub Pages
+
+FASE J
+⬜ Release 1.0
+--------------------
