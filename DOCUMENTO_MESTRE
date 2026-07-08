@@ -1,0 +1,69 @@
+# DOCUMENTO MESTRE
+Projeto: Caderninho Digital
+Data de criação: 08/07/2026
+
+---
+
+# VISÃO DO PROJETO
+
+Objetivo principal:
+
+Transformar o Caderninho Digital em uma aplicação profissional, independente de plataformas proprietárias, compatível com:
+
+- PWA
+- Navegadores modernos
+- Android
+- iOS
+- Execução local
+- Servidores próprios
+- GitHub Pages (modo compatível)
+
+Princípios:
+
+- Arquitetura limpa
+- Código modular
+- Independência de IA
+- Documentação permanente
+- Evolução controlada por Sprint
+- Auditoria contínua
+- Rastreabilidade completa de decisões técnicas
+
+---
+
+# CRONOLOGIA
+
+## 2026-07-08
+
+### Auditoria Fase 01 — Arquitetura Base
+
+Arquivos auditados:
+
+- package.json
+- vite.config.ts
+- tsconfig.json
+- drizzle.config.ts
+- railway.toml
+- railway.json
+
+### Conclusões
+
+- Arquitetura moderna e consistente.
+- TypeScript configurado corretamente.
+- Build bem estruturado.
+- Backend e frontend separados.
+- Drizzle corretamente integrado.
+
+### Riscos identificados
+
+R001 — Forte acoplamento ao ecossistema Manus:
+- pasta `.manus`;
+- plugin `vite-plugin-manus-runtime`;
+- endpoints `__manus__`;
+- coletores de logs específicos.
+
+### Ações planejadas
+
+1. Auditar frontend.
+2. Auditar backend.
+3. Mapear dependências Manus.
+4. Planejar desacoplamento completo.
