@@ -30,6 +30,30 @@ Princípios:
 
 ---
 
+# DIRETRIZ OPERACIONAL ATUAL
+
+A partir desta fase, o projeto será conduzido em modo de engenharia prática:
+
+- alterações orientadas por evidências do repositório;
+- atualização contínua do Documento Mestre;
+- criação e manutenção de ADRs;
+- execução por Sprints;
+- solicitação de permissão antes de cada commit;
+- remoção gradual de dependências da plataforma Manus;
+- preservação da estabilidade do sistema durante toda a reconstrução.
+
+---
+
+# STATUS ATUAL DO PROJETO
+
+- Repositório GitHub vinculado e acessível.
+- Auditoria inicial concluída.
+- Dependências Manus confirmadas em build, runtime e componentes de frontend.
+- Estrutura geral do projeto avaliada como sólida.
+- Início oficial da Sprint 01 autorizado.
+
+---
+
 # CRONOLOGIA
 
 ## 2026-07-08
@@ -67,6 +91,7 @@ R001 — Forte acoplamento ao ecossistema Manus:
 2. Auditar backend.
 3. Mapear dependências Manus.
 4. Planejar desacoplamento completo.
+
 ---
 
 # 2026-07-08 — AUDITORIA FASE 02 — FRONTEND (CLIENT)
@@ -171,6 +196,7 @@ Essa separação será utilizada como base para eliminar restrições de hospeda
 Auditoria completa do banco de dados, camada compartilhada (`shared`) e infraestrutura de sincronização, seguida do inventário das dependências remanescentes da plataforma Manus.
 
 --------------------
+
 ---
 
 # 2026-07-08 — AUDITORIA FASE 04 — BANCO, SINCRONIZAÇÃO E DÍVIDA TÉCNICA
@@ -222,7 +248,9 @@ Antes de qualquer limpeza, será produzido um Inventário de Arquivos com classi
 - Candidato à Remoção
 
 Nenhum arquivo será removido sem auditoria e registro no Documento Mestre.
+
 ------------------------
+
 ---
 
 # 2026-07-08 — AUDITORIA FASE 05 — INVENTÁRIO DE DEPENDÊNCIAS MANUS
@@ -260,6 +288,7 @@ O acoplamento encontra-se concentrado em poucos pontos estruturais, indicando qu
 ## Próxima etapa
 
 Produzir o Mapa de Dependências da Aplicação, identificando fluxos de inicialização, providers, contexts, serviços, hooks, rotas e componentes efetivamente utilizados.
+
 -----------------------
 ETAPA 01 — MATRIZ DE MÓDULOS
 # BASE DE CONHECIMENTO DO PROJETO
@@ -387,11 +416,9 @@ Status:
 Aprovado
 
 Objetivo:
-
 Centralizar toda documentação técnica, auditorias, decisões e histórico do projeto em um único documento cronológico.
 
 Impacto:
-
 Toda alteração relevante deverá ser registrada antes do encerramento de cada Sprint ou fase.
 
 ---
@@ -408,7 +435,6 @@ Status:
 Em andamento
 
 Objetivo:
-
 Eliminar dependências estruturais da plataforma Manus mantendo compatibilidade com:
 
 - PWA
@@ -454,17 +480,10 @@ FASE E
 ⬜ Desacoplamento Manus
 
 FASE F
-⬜ Padronização Arquitetural
+⬜ Consolidação do Build
 
 FASE G
-⬜ Otimização de Performance
+⬜ Padronização do Backend
 
 FASE H
-⬜ PWA Offline Completo
-
-FASE I
-⬜ Compatibilidade GitHub Pages
-
-FASE J
-⬜ Release 1.0
---------------------
+⬜ Certificação Final
